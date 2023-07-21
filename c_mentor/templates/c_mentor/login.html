@@ -1,0 +1,28 @@
+{% extends "c_mentor/layout.html" %}
+
+{% block body %}
+<div class="logins" style="color: black;">
+    <div class="title" style="padding-top:6%;">Login</div>
+
+    {% if message %}
+    <div>{{ message }}</div>
+    {% endif %}
+    <div class="inner-login">
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div><input placeholder="Username" name="username" class="name"></div><br>
+            <div><input placeholder="Password" name="password" type="password" class="name"></div><br>
+            <div><button class="login-btn" type="submit">Sign in</button></div>
+        </form>
+        <div class="line-or">
+            <hr class="log-hr">
+            <div class="texts">or</div>
+            <hr class="log-hr">
+        </div>
+
+        <div><a href="{% url 'register' %}"><button class="login-btn">Register</button></a></div>
+
+
+    </div>
+</div>
+{% endblock %}

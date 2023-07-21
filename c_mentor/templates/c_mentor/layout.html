@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="{% static 'c_mentor/style.js'%}"></script>
+    <title>{% block title %} Mentor for computer science{% endblock %}</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href="{% static 'c_mentor/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="header">
+        <div>
+            <span class="logo">W</span>
+            <span class="middle-logo">ISDOM</span>
+            <span class="logo">H</span>
+            <span class="middle-logo">UB</span>
+        </div>
+        <div class="navs">
+            {% if user.is_authenticated %}
+            <div class="links">
+                <a href="{% url 'index' %}">Home</a>
+            </div>
+            <div class="const_type" style="display: none;">{{user.user_type}}</div>
+            <div class="const_id" style="display: none;">{{user.id}}</div>
+            <div class="links">
+                <a class="dis-display" href="#"
+                    onclick="profile_display('{{user.user_type}}','{{user.username}}')">Profile</a>
+            </div>
+            {% if user.user_type == "Mentor"%}
+            <div class="links">
+                <a href="#" onclick="request('{{user.id}}','{{user.username}}')">Request list</a>
+            </div>
+            <div class="links">
+                <a href="#" onclick="student_display('{{user.id}}','{{user.username}}')">Students</a>
+            </div>
+            {%else%}
+            {%endif%}
+            {% if user.user_type == "Student"%}
+            <div class="links">
+                <a href="#" onclick="profile_mentor('{{user.user_type}}')">All Mentors</a>
+            </div>
+            <div class="links">
+                <a href="#" onclick="mentor_display('{{user.id}}','{{user.username}}')">Your Mentor</a>
+            </div>
+            {%else%}
+            {%endif%}
+
+            <div class="links dropdown" style="margin-left:2%;">
+                <a link="" class="dropbtn" style="color: black;">Communication</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="writes()">Write a message</a>
+                    <a href="#" onclick="display_message('received','{{user.id}}','{{user.user_type}}')">Received
+                        message</a>
+                    <a href="#" onclick="display_message('sent' ,'{{user.id}}','{{user.user_type}}')">Sent
+                        message</a>
+                </div>
+            </div>
+
+            <div class="links">
+                <a href="{% url 'logout' %}">Log Out</a>
+            </div>
+            {% else %}
+            <div class="links">
+                <a class="login" href="{% url 'login' %}">Log In</a>
+            </div>
+            <div class="links">
+                <a class="student" href="{% url 'register' %}">Register</a>
+            </div>
+
+            {% endif %}
+        </div>
+    </div>
+    <div>
+
+        {% block body %}
+        {% endblock %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

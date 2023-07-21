@@ -1,0 +1,305 @@
+{%extends "c_mentor/layout.html"%}
+
+{%block body%}
+{% load static %}
+<!--Main page-->
+{% if user.is_authenticated %}
+<div class="main-body">
+
+        <div class="check" style="position:absolute">
+                <div class="main-image" style="position: relative;">
+                        <img style="width:100%;height: 75%;"
+                                src="https://www.corporateculturepros.com/wp-content/uploads/2015/07/Mentoring.jpg"
+                                alt="">
+                        <div class="shade"></div>
+                        <p class="text-img1">A MENTOR IS SOMEONE WHO SEES MORE TALENT AND ABILITY WITHIN YOU, THAN YOU
+                                SEE IN
+                                YOURSELF, AND HELPS BRING IT OUT OF YOU</p>
+                </div>
+                <div class="vision">
+                        <div class="vision-img" style="position: absolute;">
+                                <img src="{% static 'c_mentor/image-interactive.jpg' %}" alt="" style="width:600px;">
+                        </div>
+                        <div class="vision-text">
+                                <div class="title">
+                                        <b>OUR VISION</b>
+                                </div>
+                                <div>Empowering minds, shaping futures: Unlocking potential, fostering growth,
+                                        and igniting success
+                                        through the power of mentorship.</div>
+
+                        </div>
+                </div>
+                <div class="services">
+                        <div class="title" style="color:white;padding-top: 3%;">SERVICES PROVIDED</div>
+                        <div class="list-services">
+                                <div class="service"><br>
+                                        <div class="titles">Find Your Mentor</div>
+                                        <div><img src="{% static 'c_mentor/find-mentor.jpg' %}" alt=""
+                                                        style="height: 50px;width: 50px;"></div>
+                                        <div class="text-service">
+                                                Welcome to our vast and expanding catalogue of experienced mentors,
+                                                where you can discover the
+                                                ideal fit to guide you on your journey. We understand the importance of
+                                                finding the right
+                                                mentor, and we are committed to helping you reach your full potential.
+                                        </div>
+                                </div>
+                                <div class="service"><br>
+                                        <div class="titles">Apply for Mentorship</div>
+                                        <div><img src="{% static 'c_mentor/apply-mentor.png' %}" alt=""
+                                                        style="height: 50px;width: 50px;"></div>
+                                        <div class="text-service">
+                                                To take the next step in finding your perfect mentor, simply fill in our
+                                                application. Share your
+                                                goals, aspirations, and preferred areas of focus. Our matching algorithm
+                                                will analyze your
+                                                information, and if there's a match with your chosen mentor, we'll
+                                                connect you to begin your
+                                                transformative mentoring journey.
+                                        </div>
+                                </div>
+                                <div class="service"><br>
+                                        <div class="titles">Level up your skills
+                                        </div>
+                                        <div><img src="{% static 'c_mentor/level-up.jpg' %}" alt=""
+                                                        style="height: 50px;width: 50px;"></div>
+                                        <div class="text-service">
+                                                Experience a range of personalized services offered by our mentors to
+                                                catapult your career. From
+                                                engaging personal chats to practical hands-on support, each mentor
+                                                brings unique expertise to
+                                                the table. Whether you need assistance with goal setting, skill
+                                                development, networking, or
+                                                career strategy, our mentors have you covered.</div>
+                                </div>
+                        </div>
+                </div>
+                <div class="steps">
+                        <div class="title">STEPS</div>
+                        <div class="step">
+                                <div class="st" style="background-color: rgb(25, 26, 87);">
+                                        <div class="inner-st">
+                                                <div class="text-st">Fill the profile page. </div>
+                                        </div>
+                                        <div class="number-step" style="color: rgb(25, 26, 87);">01</div>
+                                </div>
+                                <div class="st" style="background-color: rgb(25, 26, 87);">
+                                        <div class="inner-st">
+                                                <div class="text-st">Choose Your mentor or student</div>
+                                        </div>
+                                        <div class="number-step" style="color: rgb(25, 26, 87);">02</div>
+                                </div>
+                                <div class="st" style="background-color: rgb(25, 26, 87);">
+                                        <div class="inner-st">
+                                                <div class="text-st">Connect with your mentor or student through the
+                                                        message.</div>
+                                        </div>
+                                        <div class="number-step" style="color: rgb(25, 26, 87);">03</div>
+                                </div>
+                        </div>
+                </div>
+                <div class="footer">
+                        <div class="flex-footer">
+                                <div class="foot-1">
+                                        <div>
+                                                <span class="logo">W</span>
+                                                <span class="middle-logo">ISDOM</span>
+                                                <span class="logo">H</span>
+                                                <span class="middle-logo">UB</span>
+                                        </div><br>
+                                        <div>Discover top-tier mentors and industry professionals to propel your career
+                                                forward.</div>
+                                        <p>&copy; WisdomHub<a href="#">Privacy Policy | Terms of Services
+                                </div>
+                                <div class="foot-2">
+                                        <div class="social">
+                                                <img class="s-links" src="{% static 'c_mentor/facebook.jpg' %}" alt="">
+                                                <img class="s-links" src="{% static 'c_mentor/instagram.jpg' %}" alt="">
+                                                <img class="s-links" src="{% static 'c_mentor/twitter.jpg' %}" alt="">
+                                                <img class="s-links" src="{% static 'c_mentor/linked.jpg' %}" alt="">
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+
+<div class="form-all">
+
+        <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+                aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h5 class="modal-title" id="myLargeModalLabel" style="color: black;">
+                                                Update Profile</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                        </button>
+                                </div>
+                                <form class="form-view-Mentor" method="post">
+                                        {%csrf_token%}
+                                        <div style="margin-left:33%;">
+                                                <h1>Mentor Form</h1><br>
+                                        </div>
+
+
+
+                                        <div class="mentor-details">
+
+                                                <div class="outer-o1-mentor">
+
+                                                        <div class="outer-stu">
+                                                                <div>Job:</div>
+                                                                <input type="text" placeholder="job"
+                                                                        class="name job-Mentor-{{user.id}}">
+                                                        </div>
+                                                        <div class="outer-stu">
+                                                                <div>Pay per Month($):</div>
+                                                                <input type="text" placeholder="pay per month"
+                                                                        class="name pay-Mentor-{{user.id}}">
+                                                        </div>
+
+                                                </div>
+                                                <div class="outer-o1-mentor">
+                                                        <div class="outer-stu" style="width: 100%;">
+                                                                <div>Skills:</div>
+                                                                <input type="text" placeholder="skills"
+                                                                        class="name special-Mentor-{{user.id}}"
+                                                                        style="width:100%; ">
+                                                        </div>
+                                                </div>
+                                                <div class="outer-o1-mentor">
+
+                                                        <div class="outer-stu">
+                                                                <div>Company:</div>
+                                                                <input type="text" placeholder="company"
+                                                                        class="name company-Mentor-{{user.id}}">
+                                                        </div>
+                                                        <div class="outer-stu">
+                                                                <div>Qualification:</div>
+                                                                <input type="text" placeholder="qualification"
+                                                                        class="name qualify-Mentor-{{user.id}}">
+                                                        </div>
+
+                                                </div>
+                                                <div class="outer-o1-mentor">
+                                                        <div class="outer-stu" style="width: 100%;">
+                                                                <div>Url of Image:</div>
+                                                                <input type="text" placeholder="url"
+                                                                        class="name url-Mentor-{{user.id}}"
+                                                                        style="width:100%;">
+                                                        </div>
+                                                </div>
+                                                <div class="outer-o1-mentor">
+                                                        <div class="outer-stu" style="width: 100%;">
+                                                                <div>Describe Yourself:</div>
+                                                                <input type="text" placeholder="less than 50 words"
+                                                                        class="name description-Mentor-{{user.id}}"
+                                                                        style="width:100%;">
+                                                        </div>
+                                                </div>
+
+                                        </div>
+
+                                </form>
+
+                                <div class="modal-footer">
+                                        <button onclick="close('{{user.id}}')" class="login-btn"
+                                                data-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="login-btn"
+                                                onclick="display('{{user.user_type}}','{{user.id}}','{{user.username}}')">Submit</button>
+
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+
+<!--Student form -->
+
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal1" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                        <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel" style="color: black;">
+                                        Update Profile</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                        <form class="form-view-Student" method="post">
+                                {%csrf_token%}
+                                <h1 class="form-group" style="margin-left:33%;">Student Form</h1>
+                                <div class="outer-stu" style="margin:1%;margin-left:100px;">
+                                        <div style="font-weight:bolder;">Url of Image</div>
+                                        <input type="text" placeholder="Url" class="name url-Student-{{user.id}}"
+                                                style="width: 500px;">
+                                </div>
+                                <div class="outer-stu" style="margin:1%;margin-left:100px;">
+                                        <div style="font-weight:bolder;">Institution Name</div>
+                                        <input type="text" placeholder="institution name"
+                                                class="name school-Student-{{user.id}}" style="width: 500px;">
+                                </div>
+                                <div class="outer-stu" style="margin:1%;margin-left:100px;">
+                                        <div style="font-weight:bolder;">Education</div>
+                                        <input type="text" placeholder="Education"
+                                                class="name education-Student-{{user.id}}" style="width: 500px;">
+                                </div>
+                        </form>
+                        <div class="modal-footer">
+                                <button class="login-btn" onclick="close('{{user.id}}')"
+                                        data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="login-btn"
+                                        onclick="display('{{user.user_type}}','{{user.id}}','{{user.username}}')">Submit</button>
+
+                        </div>
+
+                </div>
+        </div>
+</div>
+
+
+<!--Mentor form-->
+
+
+
+</div>
+
+<div class="check-user" style="display: none;">{{request.user}}</div>
+
+<!--Profile Display-->
+<div class="display" style="display: none;"></div>
+<!--All mentor-->
+<div class="allmentor" style="display: none;"></div>
+<!--TO user list for mentor-->
+<div class="to_mentor" style="display: none;"></div>
+<!--Student_display in mentor-->
+<div class="student_mentor" style="display: none;"></div>
+<!--Mentor_display in student-->
+<div class="mentor_student" style="display: none;"></div>
+<!--Messages-->
+<div class="information" style="display: none;">HI</div>
+<!--write message-->
+<div class="fill-message" style="display: none;">
+        <form class="write_message">
+                <div class="form-group">
+                        <div class="text-to">To</div>
+                        <input id="fill-receiver" class="to" placeholder="Username">
+                </div>
+                <textarea id="fill_content" class="content" placeholder="write your message"></textarea>
+                <div class="form-group">
+                        <input type="submit" value="Send" onclick="fill_information()" class="btn btn-primary" id="sub">
+                </div>
+        </form>
+</div>
+{%else%}
+<h1 class="required"> LOGIN REQUIRED!!</h1>
+<h1 class="welcome">WELCOME TO OUR WEBSITE</h1>
+{%endif%}
+
+{%endblock%}
